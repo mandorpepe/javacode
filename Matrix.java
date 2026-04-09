@@ -20,12 +20,13 @@ class Matrix {
 
     // cложение
     public Matrix add(Matrix other) {
+        //проверка на размер
         if (this.rows != other.rows || this.cols != other.cols) {
             throw new IllegalArgumentException("Матрицы должны быть одинакового размера");
         }
 
         int[][] result = new int[rows][cols];
-
+        // сложение в цикле
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 result[i][j] = this.data[i][j] + other.data[i][j];
@@ -38,7 +39,7 @@ class Matrix {
     // вывод
     public String toString() {
         StringBuilder sb = new StringBuilder();
-
+        //перевод в консольный вид
         for (int[] row : data) {
             for (int val : row) {
                 sb.append(val).append("\t");
